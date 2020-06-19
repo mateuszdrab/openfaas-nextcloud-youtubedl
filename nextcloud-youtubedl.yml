@@ -1,0 +1,13 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  nextcloud-youtubedl:
+    lang: python3
+    handler: ./nextcloud-youtubedl
+    image: <registry>/nextcloud-youtubedl:latest
+    environment:
+        read_timeout: 600s
+        write_timeout: 600s
+
